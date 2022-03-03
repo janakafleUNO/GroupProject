@@ -15,3 +15,14 @@ class Car_Type(models.Model):
 
     def __str__(self):
         return self.Car_Type
+class Car_Model(models.Model):
+    Model_Name = models.CharField(max_length=50)
+    Car_Year = models.CharField(max_length=50)
+    Car_Prize = models.CharField(max_length=50)
+    Car_BodyType = models.CharField(max_length=50)
+    Car_FuelType = models.CharField(max_length=50)
+    Car_Transmission = models.CharField(max_length=50)
+    Car_Milage = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.Car_Model
