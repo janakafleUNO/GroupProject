@@ -8,9 +8,11 @@ class Type(admin.ModelAdmin):
     list_filter = ('Car_BodyType', 'Car_FuelType')
     search_fields = ('Car_BodyType', 'Car_FuelType', 'Car_Transmission')
 
+
 class Name(admin.ModelAdmin):
     list_display = ('Car_Brand', 'Car_Year')
     list_filter = ('Car_Brand', 'Car_Year')
+
 
 class Model(admin.ModelAdmin):
     list_display = ('Model_Name', 'Car_Year', 'Car_Prize', 'Car_BodyType', 'Car_FuelType', 'Car_Transmission', 'Car_Milage')
