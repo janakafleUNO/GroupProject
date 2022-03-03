@@ -19,3 +19,5 @@ def Model(request):
     Car_Model = Car_Model.objects.filter()
     return render(request, 'carviewer/Model.html',
                   {'Models': Model})
+
+// Edit this //
