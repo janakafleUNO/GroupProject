@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
 
-#Define the model for the Customer table
+# Define the model for the Customer table
+
+
 class Car_Brand(models.Model):
     Car_Brand = models.CharField(max_length=50, db_index=True)
     Car_Year = models.IntegerField(max_length=50, unique=True)
@@ -12,7 +14,7 @@ class Car_Brand(models.Model):
         verbose_name = 'Car_Brand'
         verbose_name_plural = 'Car_Brands'
 
-    def __str__ (self):
+    def __str__(self):
         return self.Car_Brand
 
 
