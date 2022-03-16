@@ -1,19 +1,21 @@
 from django import forms
-from .models import Car_Brand, Car_Type, Car_Model
+from .models import CarBrand, CarType, CarModel
 
-class Car_Brand(forms.ModelForm):
+
+class CarBrandForm(forms.ModelForm):
     class Meta:
-        model = Car_Brand
-        fields = ( 'Car_Brand', 'image' )
+        model = CarBrand
+        fields = ('car_brand', 'car_year')
 
-class Car_Type(forms.ModelForm):
+
+class CarTypeForm(forms.ModelForm):
     class Meta:
-        model = Car_Type
-        fields = ( 'Category', 'Car_BodyType', 'Car_FuelType', 'Car_Transmission', 'description', 'available' )
+        model = CarType
+        fields = ('car_brand', 'car_bodytype', 'car_fueltype', 'car_transmission', 'description', 'available')
 
-class Car_Model(forms.ModelForm):
+
+class CarModelForm(forms.ModelForm):
     class Meta:
-        model = Car_Model
-        fields = ( 'Model_Name', 'Car_Year', 'Car_Prize', 'Car_BodyType', 'Car_FuelType', 'Car_Transmission', 'Car_Milage' )
-
-//Edit this//
+        model = CarModel
+        fields = ('car_brand', 'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission',
+                  'car_milage')

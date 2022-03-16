@@ -1,25 +1,30 @@
 from django.contrib import admin
-from .models import Car_Type, Car_Brand, Car_Model
+from .models import CarType, CarBrand, CarModel
 
 
-# Define the admin options for the Customer table
-class Type(admin.ModelAdmin):
-    list_display = ('Car_BodyType', 'Car_FuelType', 'Car_Transmission')
-    list_filter = ('Car_BodyType', 'Car_FuelType')
-    search_fields = ('Car_BodyType', 'Car_FuelType', 'Car_Transmission')
+class CarBrandList(admin.ModelAdmin):
+    list_display = ('car_brand', 'car_year')
+    list_filter = ('car_brand', 'car_year')
+    ordering = ['car_brand']
 
 
-class Name(admin.ModelAdmin):
-    list_display = ('Car_Brand', 'Car_Year')
-    list_filter = ('Car_Brand', 'Car_Year')
+class CarTypeList(admin.ModelAdmin):
+    list_display = ('car_brand', 'car_bodytype', 'car_fueltype', 'car_transmission')
+    list_filter = ('car_brand', 'car_bodytype', 'car_fueltype')
+    search_fields = ('car_brand', 'car_bodytype', 'car_fueltype', 'car_transmission')
+    ordering = ['car_brand']
 
 
-class Model(admin.ModelAdmin):
-    list_display = ('Model_Name', 'Car_Year', 'Car_Prize', 'Car_BodyType', 'Car_FuelType', 'Car_Transmission', 'Car_Milage')
-    list_filter = ('Model_Name', 'Car_Year', 'Car_Prize', 'Car_BodyType', 'Car_FuelType', 'Car_Transmission')
-    search_fields = ('Model_Name', 'Car_Year')
+class CarModelList(admin.ModelAdmin):
+    list_display = (
+        'car_brand',  'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission',
+        'car_milage')
+    list_filter = (
+        'car_brand', 'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission')
+    search_fields = ('car_brand', 'model_name', 'car_year')
+    ordering = ['car_brand']
 
 
-admin.site.register(Car_Type, Type)
-admin.site.register(Car_Brand, Name)
-admin.site.register(Car_Model, Model)
+admin.site.register(CarBrand, CarBrandList)
+admin.site.register(CarType, CarTypeList)
+admin.site.register(CarModel, CarModelList)

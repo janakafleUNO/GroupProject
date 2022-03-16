@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'carviewer/base.html' %}
+{% block content %}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CarViewer Website</title>
+    </head>
+    <body class="bodylist">
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Welcome!</div>
+            <div class="panel-body">
+                CarViewer Websites Services, Find the right Car For You!.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>CarBrands Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover w-auto">
+            <thead>
+            <tr class="bg-info">
+                <th>CarBrand</th>
+                <th>Car Year</th>
+
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for carbrand in carbrands %}
+                <tr>
+                    <td>{{ carbrand.car_brand }}</td>
+                    <td>{{ carbrand.car_yaer }}</td>
+
+                    <td><a href="{% url 'carviewer:carbrand_edit' pk=carbrand.pk %}"
+                           class="btn btn-warning">Edit</a></td>
+                    <td><a href="{% url 'carviewer:carbrand_delete' pk=carbrand.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    </body>
+    </html>
+{% endblock %}
+
+</html>

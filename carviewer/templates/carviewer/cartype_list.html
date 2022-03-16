@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'carviewer/base.html' %}
+{% block content %}
+
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CarViewer Website</title>
+    </head>
+    <body class="bodylist">
+
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Welcome!</div>
+            <div class="panel-body">
+                CarViewer Websites Services, Find the right Car For You!.
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h2>CarTypes Information</h2>
+    </div>
+    <div>
+        <table class="table table-striped table-bordered table-hover w-auto">
+            <thead>
+            <tr class="bg-info">
+                <th>CarBrand</th>
+                <th>Car BodyType</th>
+               <th>Car FuelType</th>
+               <th>Car Transmissions</th>
+                <th>Description</th>
+                <th>Available</th>
+
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cartype in cartypes %}
+                <tr>
+                    <td>{{ cartype.car_brand }}</td>
+                   <td>{{ cartype.car_bodytype }}</td>
+                    <td>{{ cartype.car_fueltype }}</td>
+                   <td>{{ cartype.car_transmission }}</td>
+                   <td>{{ cartype.description }}</td>
+                    <td>{{ cartype.available }}</td>
+                    <td><a href="{% url 'carviewer:cartype_edit' pk=cartype.pk %}"
+                           class="btn btn-warning">Edit</a></td>
+                    <td><a href="{% url 'carviewer:cartype_delete' pk=cartype.pk %}"
+                           onclick="return confirm('Are you sure you want to delete?')"
+                           class="btn btn-danger">Delete</a>
+                    </td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <a href="{% url 'carviewer:cartype_new' %}"><span
+                class="btn btn-primary">Add CarTypes</span></a>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}
+
+</html>

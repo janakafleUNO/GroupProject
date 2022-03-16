@@ -1,51 +1,39 @@
 from django.db import models
 from django.utils import timezone
 
-# Define the model for the Customer table
+# Define the model for the CarViewer table
 
 
-class Car_Brand(models.Model):
-    Car_Brand = models.CharField(max_length=50, db_index=True)
-    Car_Year = models.IntegerField(max_length=50, unique=True)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
-
-    class Meta:
-        ordering = ('name',)
-        verbose_name = 'Car_Brand'
-        verbose_name_plural = 'Car_Brands'
+class CarBrand(models.Model):
+    car_brand = models.CharField(max_length=50)
+    car_year = models.IntegerField()
 
     def __str__(self):
-        return self.Car_Brand
+        return self.car_brand
 
 
-class Car_Type(models.Model):
-    Category = models.ForeignKey(Car_Brand, related_name='products', on_delete=models.CASCADE)
-    Car_BodyType = models.CharField(max_length=50)
-    Car_FuelType = models.CharField(max_length=50)
-    Car_Transmission = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
+class CarType(models.Model):
+
+    car_brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE, related_name='cartypes', default=True)
+    car_bodytype = models.CharField(max_length=50)
+    car_fueltype = models.CharField(max_length=50)
+    car_transmission = models.CharField(max_length=50)
     description = models.TextField(blank=True)
     available = models.BooleanField(default=True)
 
-    class Meta:
-        ordering = ('name',)
-        index_together = (('id', 'slug'),)
+    def __str__(self):
+        return str(self.car_brand)
 
+
+class CarModel(models.Model):
+    car_brand = models.ForeignKey(CarBrand, on_delete=models.CASCADE, related_name='carmodels', default=True)
+    model_name = models.CharField(max_length=50)
+    car_year = models.IntegerField()
+    car_prize = models.CharField(max_length=50)
+    car_bodytype = models.CharField(max_length=50)
+    car_fueltype = models.CharField(max_length=50)
+    car_transmission = models.CharField(max_length=50)
+    car_milage = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.Car_Type
-
-
-class Car_Model(models.Model):
-    Model_Name = models.CharField(max_length=50)
-    Car_Year = models.IntegerField(max_length=50)
-    Car_Prize = models.CharField(max_length=50)
-    Car_BodyType = models.CharField(max_length=50)
-    Car_FuelType = models.CharField(max_length=50)
-    Car_Transmission = models.CharField(max_length=50)
-    Car_Milage = models.DecimalField(max_length=50)
-
-    def __str__(self):
-        return self.Car_Model
-
-// Edit This //
+        return str(self.car_brand)
