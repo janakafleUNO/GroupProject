@@ -17,10 +17,10 @@ class CarTypeList(admin.ModelAdmin):
 
 class CarModelList(admin.ModelAdmin):
     list_display = (
-        'car_brand',  'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission',
-        'car_milage')
+        'car_brand',  'model_name', 'car_year', 'car_price', 'car_bodytype', 'car_fueltype', 'car_transmission',
+        'car_mileage')
     list_filter = (
-        'car_brand', 'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission')
+        'car_brand', 'model_name', 'car_year', 'car_price', 'car_bodytype', 'car_fueltype', 'car_transmission')
     search_fields = ('car_brand', 'model_name', 'car_year')
     ordering = ['car_brand']
 

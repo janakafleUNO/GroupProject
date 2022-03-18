@@ -17,5 +17,5 @@ class CarTypeForm(forms.ModelForm):
 class CarModelForm(forms.ModelForm):
     class Meta:
         model = CarModel
-        fields = ('car_brand', 'model_name', 'car_year', 'car_prize', 'car_bodytype', 'car_fueltype', 'car_transmission',
-                  'car_milage')
+        fields = ('car_brand', 'model_name', 'car_year', 'car_price', 'car_bodytype', 'car_fueltype', 'car_transmission',
+                  'car_mileage')

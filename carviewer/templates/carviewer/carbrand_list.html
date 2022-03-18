@@ -35,7 +35,7 @@
             {% for carbrand in carbrands %}
                 <tr>
                     <td>{{ carbrand.car_brand }}</td>
-                    <td>{{ carbrand.car_yaer }}</td>
+                    <td>{{ carbrand.car_year }}</td>
 
                     <td><a href="{% url 'carviewer:carbrand_edit' pk=carbrand.pk %}"
                            class="btn btn-warning">Edit</a></td>
