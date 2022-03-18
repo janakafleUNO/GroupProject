@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
-                    <img src="{% static "images/brands.jpeg" %}" class="card-img-top" alt="customer">
+                    <img src="{% static "images/models.jpeg" %}" class="card-img-top" alt="carbrand">
                     <div class="card-body">
                         <h5 class="card-title">CarBrands</h5>
                         <p class="card-text">There are many CarBrands.</p>
@@ -31,10 +31,10 @@
 
            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
-                    <img src="{% static "images/cartype.jpeg" %}" class="card-img-top" alt="lunch">
+                    <img src="{% static "images/cartype.jpeg" %}" class="card-img-top" alt="cartype">
                     <div class="card-body">
-                        <h5 class="card-title">Types</h5>
-                        <p class="card-text">CarTypes of Brands</p>
+                        <h5 class="card-title">CarTypes</h5>
+                        <p class="card-text">There are many CarTypes of each Brand</p>
                         <p><a class="btn btn-primary" href="{% url 'carviewer:cartype_list' %}"
                               role="button">View CarTypes details &raquo;</a></p>
                     </div>
@@ -42,12 +42,23 @@
             </div>
            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
-                    <img src="{% static "images/models.jpeg" %}" class="card-img-top" alt="cupcakes">
+                    <img src="{% static "images/models.jpeg" %}" class="card-img-top" alt="carmodel">
                     <div class="card-body">
-                        <h5 class="card-title">Models</h5>
-                        <p class="card-text">CarModels Products</p>
+                        <h5 class="card-title">CarModels</h5>
+                        <p class="card-text">There are many CarModels of each CarType</p>
                         <p><a class="btn btn-primary" href="{% url 'carviewer:carmodel_list' %}"
                               role="button">View CarModels details &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+           <div class="col-md-4 d-flex align-items-stretch">
+                <div class="card">
+                    <img src="{% static "images/models.jpeg" %}" class="card-img-top" alt="carreview">
+                    <div class="card-body">
+                        <h5 class="card-title">CarReviews</h5>
+                        <p class="card-text">There are CarReviews of each Car</p>
+                        <p><a class="btn btn-primary" href="{% url 'carviewer:carreview_list' %}"
+                              role="button">View CarReview details &raquo;</a></p>
                     </div>
                 </div>
             </div>
