@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d320dc99-313e-4ac3-a799-e8b31bb5d1dc" name="Changes" comment="updated" />
+    <list default="true" id="d320dc99-313e-4ac3-a799-e8b31bb5d1dc" name="Changes" comment="updated">
+      <change afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0002_car_brand_car_year.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0003_car_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0004_auto_20220315_1920.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0005_auto_20220315_2315.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0006_auto_20220316_0231.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0007_auto_20220317_1941.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0008_alter_carmodel_car_mileage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0009_alter_carbrand_car_year.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carviewer/migrations/0010_carreview.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,14 +30,20 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25qQFXPhB4vTOSkPpqY6lYE6NU5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;sqlite" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -66,6 +85,7 @@
       <updated>1646252034072</updated>
       <workItem from="1646252035439" duration="1187000" />
       <workItem from="1647976447357" duration="18000" />
+      <workItem from="1647977359560" duration="1113000" />
     </task>
     <task id="LOCAL-00001" summary="updated">
       <created>1646252508215</created>
@@ -90,8 +110,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="updated" />
     <option name="LAST_COMMIT_MESSAGE" value="updated" />
   </component>
