@@ -27,8 +27,8 @@
             <tr class="bg-info">
                 <th>Car Brand Name</th>
                 <th>Car Year</th>
+                <th>Car Image</th>
 
-                <th colspan="3">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -36,13 +36,7 @@
                 <tr>
                     <td>{{ carbrand.car_brand }}</td>
                     <td>{{ carbrand.car_year }}</td>
-
-                    <td><a href="{% url 'carviewer:carbrand_edit' pk=carbrand.pk %}"
-                           class="btn btn-warning">Edit</a></td>
-                    <td><a href="{% url 'carviewer:carbrand_delete' pk=carbrand.pk %}"
-                           onclick="return confirm('Are you sure you want to delete?')"
-                           class="btn btn-danger">Delete</a>
-                    </td>
+                    <td>{{ carbrand.car_image }}</td>
 
 
                 </tr>
@@ -52,10 +46,6 @@
 
     </div>
 
-    <div>
-        <a href="{% url 'carviewer:carbrand_new' %}"><span
-                class="btn btn-primary">Add CarBrands</span></a>
-    </div>
 
     </body>
     </html>

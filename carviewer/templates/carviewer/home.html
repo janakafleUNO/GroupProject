@@ -3,6 +3,19 @@
 {% extends 'carviewer/base.html' %}
 {% load static %}
 {% block content %}
+    <header>
+        <div class="navbar-header">
+            <h1 style="font-family:'Comic Sans MS', 'Comic Sans', cursive"> About Us</h1>
+            <p id="losinfo">
+    <span style="font-size:20px;">
+      <span style="font-family:'URW Chancery L', cursive">
+      With over 500+ experts, CarViewer is the most trusted guide in car Reviewing. Our website has in-depth reviews, new listings, top models and Verified reviews. Shoppers count on us at every step of their journey. We literally get in the driver's seat to show shoppers virtually how each car performs on the road.
+    </span>
+    </span>
+            </p>
+        </div>
+    </header>
+
     <body>
     {% if user.is_authenticated %}
         <div class="page-container">
@@ -24,12 +37,12 @@
                         <h5 class="card-title">CarBrands</h5>
                         <p class="card-text">There are many CarBrands.</p>
                         <p><a class="btn btn-primary" href="{% url 'carviewer:carbrand_list' %}"
-                              role="button">View  CarBrands details &raquo;</a></p>
+                              role="button">View CarBrands details &raquo;</a></p>
                     </div>
                 </div>
             </div>
 
-           <div class="col-md-4 d-flex align-items-stretch">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <img src="{% static "images/cartype.jpeg" %}" class="card-img-top" alt="cartype">
                     <div class="card-body">
@@ -40,7 +53,7 @@
                     </div>
                 </div>
             </div>
-           <div class="col-md-4 d-flex align-items-stretch">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <img src="{% static "images/models.jpeg" %}" class="card-img-top" alt="carmodel">
                     <div class="card-body">
@@ -51,7 +64,7 @@
                     </div>
                 </div>
             </div>
-           <div class="col-md-4 d-flex align-items-stretch">
+            <div class="col-md-4 d-flex align-items-stretch">
                 <div class="card">
                     <img src="{% static "images/carReview.jpg" %}" class="card-img-top" alt="carreview">
                     <div class="card-body">

@@ -3,6 +3,7 @@
 
 <html lang="en">
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Latest compiled and minified CSS -->
@@ -59,10 +60,12 @@
 
             {% else %}
 
-                <li><a class="nav-link" href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                <li><a class="nav-link" href="{% url 'login' %}"><span
+                        class="glyphicon glyphicon-log-in"></span>Login</a>
                 </li>
 
-                <li><a class="nav-link" href="{% url 'carviewer:signup' %}"><span class="glyphicon glyphicon-log-in"></span>Signup</a>
+                <li><a class="nav-link" href="{% url 'carviewer:signup' %}"><span
+                        class="glyphicon glyphicon-log-in"></span>Signup</a>
                 </li>
 
             {% endif %}
@@ -74,13 +77,13 @@
 <body id="app-layout">
 <div class="row">
     <div class="col-md-8">
-    {% if messages  %}
-       {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} ">
-        {{ message }}
-       </div>
-       {% endfor %}
-    {% endif %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} ">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
         {% block content %}
         {% endblock %}
     </div>
