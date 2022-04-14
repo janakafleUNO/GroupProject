@@ -1,10 +1,12 @@
+from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
-
+from .forms import CustomUserCreationForm
 now = timezone.now()
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 # HomePage
 def home(request):
@@ -205,3 +207,19 @@ def carreview_delete(request, pk):
     carreview = get_object_or_404(CarReview, pk=pk)
     carreview.delete()
     return redirect('carviewer:carreview_list')
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
