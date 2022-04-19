@@ -184,24 +184,24 @@ footer {
     <ul>
 
       <img src="/static/Images/Brands.png" alt="Sample" width="80" height="60">
-<li><a href="/carviewer/templates/carviewer/carbrand_list.html">Car Brands</a></li>
+<li><a href="{% url 'carviewer:carbrand_list' %}">Car Brands</a></li>
 <br>
 <br>
 
       <img src="/static/Images/Model.png" alt="Sample1" width="80" height="60">
-<li><a href="carmodel_list.html">Car Models</a></li>
+<li><a href="{% url 'carviewer:carmodel_list' %}">Car Models</a></li>
 
 <br>
 <br>
 
       <img src="/static/Images/Types.png" alt="Sample2" width="80" height="60">
-<li><a href="cartype_list.html">Car Types</a></li>
+<li><a href="{% url 'carviewer:cartype_list' %}">Car Types</a></li>
 <br>
 <br>
 
 
       <img src="/static/Images/Reviews.png" alt="Sample3" width="80" height="60">
-<li><a href="carreview_list.html">Car Reviews</a></li>
+<li><a href="{% url 'carviewer:carreview_list' %}">Car Reviews</a></li>
     </ul>
   </nav>
 

@@ -33,12 +33,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'carviewer.apps.CarviewerConfig',
     'django.contrib.admin',
+    'crispy_forms',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'django.contrib.humanize',
 
 ]
@@ -58,8 +58,8 @@ ROOT_URLCONF = 'GroupProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,8 +135,8 @@ EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "janakafle2015@gmail.com"
+EMAIL_HOST_USER = 'sampletestuno@gmail.com'
 
-EMAIL_HOST_PASSWORD = "janak20101988"
+EMAIL_HOST_PASSWORD = 'Sample12#'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
