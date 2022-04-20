@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'carviewer/base.html' %}
+{% load static %}
 {% block content %}
+
 
     <html>
     <head>
@@ -10,14 +12,7 @@
     </head>
     <body class="bodylist">
 
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Welcome!</div>
-            <div class="panel-body">
-                CarViewer Websites Services, Find the right Car For You!.
-            </div>
-        </div>
-    </div>
+
     <div class="row">
         <h2>CarTypes Information</h2>
     </div>
@@ -38,17 +33,18 @@
             </thead>
             <tbody>
             {% for cartype in cartypes %}
-                <tr>
-                    <td>{{ cartype.car_brand }}</td>
-                    <td>{{ cartype.car_image }}</td>
-                    <td>{{ cartype.car_bodytype }}</td>
+                <!--<tr>
+                    <td>{{ cartype.car_brand }}</td> --!>
+                    <img src="{% if cartype.car_image %}{{ cartype.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="New Image">
+
+                   <!-- <td>{{ cartype.car_bodytype }}</td>
                     <td>{{ cartype.car_fueltype }}</td>
                     <td>{{ cartype.car_transmission }}</td>
                     <td>{{ cartype.description }}</td>
                     <td>{{ cartype.available }}</td>
 
 
-                </tr>
+                </tr> -->
             {% endfor %}
             </tbody>
         </table>

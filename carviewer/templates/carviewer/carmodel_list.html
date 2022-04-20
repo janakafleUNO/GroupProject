@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'carviewer/base.html' %}
+{% load static %}
 {% block content %}
 
     <html>
@@ -10,14 +11,7 @@
     </head>
     <body class="bodylist">
 
-    <div class="container">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Welcome!</div>
-            <div class="panel-body">
-                CarViewer Websites Services, Find the right Car For You!.
-            </div>
-        </div>
-    </div>
+
     <div class="row">
         <h2>CarModels Information</h2>
     </div>
@@ -28,7 +22,9 @@
                 <th>Car Brand Name</th>
                 <th>Car Year</th>
                 <th>Model Name</th>
-                <th>Car Image</th>
+                <th>Car Image
+                </th>
+
                 <th>Car BodyType</th>
                 <th>Car FuelType</th>
                 <th>Car Transmissions</th>
@@ -44,7 +40,11 @@
                     <td>{{ carmodel.car_brand }}</td>
                     <td>{{ carmodel.car_year }}</td>
                     <td>{{ carmodel.model_name }}</td>
-                    <td>{{ carmodel.car_image }}</td>
+                    <td>
+
+                     <img src="{% if carmodel.car_image %}{{ carmodel.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="New Image">
+
+                    </td>
                     <td>{{ carmodel.car_bodytype }}</td>
                     <td>{{ carmodel.car_fueltype }}</td>
                     <td>{{ carmodel.car_transmission }}</td>
