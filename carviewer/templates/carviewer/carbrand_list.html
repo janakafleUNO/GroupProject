@@ -224,9 +224,9 @@ footer {
 <div class="responsive">
 <div class="gallery">
      <td>
-
+        <a target="_blank" href="">
          <img src="{% if carbrand.car_image %}{{ carbrand.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="Brand Name" width="600" height="400">
-
+        </a>
          {{ carbrand.car_brand }} in {{ carbrand.car_year }}
      </td>
 
