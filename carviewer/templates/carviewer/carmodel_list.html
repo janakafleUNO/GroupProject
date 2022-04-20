@@ -3,9 +3,8 @@
 {% extends 'carviewer/base.html' %}
 {% load static %}
 {% block content %}
-
-  <html>
-    <head>
+    <html>
+      <head>
 <title>CarViewer</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +19,7 @@ div.gallery:hover {
 
 div.gallery img {
   width: 100%;
-  height: auto;
+  height: 200px;
 }
 
 div.desc {
@@ -98,8 +97,8 @@ header {
 /* Create two columns/boxes that floats next to each other box on right side */
 nav {
   float: left;
-  width: 10%;
-  height: 600px; /* only for demonstration, should be removed */
+  width: 0%;
+  height: auto; /* only for demonstration, should be removed */
   background: #ccc;
   padding: 5px;
 }
@@ -113,9 +112,9 @@ nav ul {
 article {
   float: right;
   padding: 10px;
-  width: 90%;
+  width: 100%;
   background-color: #f1f1f1;
-  height: 600px; /* only for demonstration, should be removed */
+  height: auto; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */
@@ -168,12 +167,10 @@ footer {
 }
 </style>
 </head>
-
-
     <body>
 
     <section>
-  <nav>
+  <!-- <nav>
     <h4 style="font-family:'Comic Sans MS', 'Comic Sans', cursive"> Navigate </h4>
     <ul>
 
@@ -199,10 +196,12 @@ footer {
     </ul>
   </nav>
 
+  -->
+
 
    <article>
 
-        <h1 style="font-family:'Comic Sans MS', 'Comic Sans', cursive" >Our Brands</h1>
+        <h1 style="font-family:'Comic Sans MS', 'Comic Sans', cursive" >Our Models</h1>
 
     <!--     <table class="table table-striped table-bordered table-hover w-auto">
             <thead>
@@ -230,8 +229,9 @@ footer {
                 <div class="responsive">
                 <div class="gallery">
                 <a target="_blank" href="">
-               <img src="{% if carmodel.car_image %}{{ carmodel.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="New Image">
+               <img src="{% if carmodel.car_image %}{{ carmodel.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="New Image" width="auto" height="auto" >
                 </a>
+                <br>
                    Brand: <td>{{ carmodel.car_brand }}</td>
                 <br>
                    Year: <td>{{ carmodel.car_year }}</td>
