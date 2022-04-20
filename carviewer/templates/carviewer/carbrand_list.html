@@ -225,10 +225,9 @@ footer {
 <div class="gallery">
      <td>
 
-         <img src="{% if carbrand.car_image %}{{ carbrand.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="Brand Name" width="150" height="120">
+         <img src="{% if carbrand.car_image %}{{ carbrand.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="Brand Name" width="600" height="400">
 
          {{ carbrand.car_brand }} in {{ carbrand.car_year }}
-
      </td>
 
 </div>
