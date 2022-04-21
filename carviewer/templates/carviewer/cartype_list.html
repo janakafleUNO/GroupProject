@@ -21,7 +21,7 @@ div.gallery:hover {
 
 div.gallery img {
   width: 100%;
-  height: auto;
+  height: 180px;
 }
 
 div.desc {
@@ -202,7 +202,7 @@ footer {
 
    <article>
 
-        <h1 style="font-family:'Comic Sans MS', 'Comic Sans', cursive" >Our Brands</h1>
+        <h1 style="font-family:'Comic Sans MS', 'Comic Sans', cursive" >Car Types</h1>
 
    <!--    <table class="table table-striped table-bordered table-hover w-auto">
             <thead>
@@ -226,8 +226,8 @@ footer {
                 <div class="gallery">
                 <a target="_blank" href="">
                 <img src="{% if cartype.car_image %}{{ cartype.car_image.url }}{% else %}{% static "images/Reviews.png" %}{% endif %}" alt="New Image">
-                <!-- </a>
-                    Brand: <td>{{ cartype.car_brand }}</td> -->
+                 </a>
+                <!--    Brand: <td>{{ cartype.car_brand }}</td> -->
                 <br>
                    Body Type: <td>{{ cartype.car_bodytype }}</td>
                 <br>
@@ -238,6 +238,8 @@ footer {
                     Description: <td>{{ cartype.description }}</td>
                 <br>
                     Availability: <td>{{ cartype.available }}</td>
+                <br>
+                    <td>{{ cartype.car_image }}</td>
 
 
                </div>
