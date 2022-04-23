@@ -12,7 +12,7 @@ class CarTypeList(admin.ModelAdmin):
     list_display = ('car_brand', 'car_image', 'car_bodytype', 'car_fueltype', 'car_transmission')
     list_filter = ('car_brand', 'car_image', 'car_bodytype', 'car_fueltype')
     search_fields = ('car_brand', 'car_image', 'car_bodytype', 'car_fueltype', 'car_transmission')
-    ordering = ['car_brand']
+    ordering = ['car_brand','car_bodytype']
 
 
 class CarModelList(admin.ModelAdmin):
@@ -24,7 +24,7 @@ class CarModelList(admin.ModelAdmin):
         'car_brand', 'car_year', 'model_name', 'car_image', 'car_bodytype', 'car_fueltype', 'car_transmission',
         'car_price',)
     search_fields = ('car_brand', 'car_year', 'model_name', 'car_image')
-    ordering = ['car_brand']
+    ordering = ['model_name', 'car_brand', 'car_bodytype']
 
 
 class CarReviewList(admin.ModelAdmin):
@@ -36,7 +36,7 @@ class CarReviewList(admin.ModelAdmin):
         'car_brand', 'car_year', 'model_name', 'car_image', 'car_bodytype', 'car_expert_review', 'car_user_review',
         'car_overall_review')
     search_fields = ('car_brand', 'car_year', 'model_name', 'car_image', 'car_expert_review')
-    ordering = ['car_brand']
+    ordering = ['model_name', 'car_brand', 'car_bodytype']
 
 
 admin.site.register(CarBrand, CarBrandList)
